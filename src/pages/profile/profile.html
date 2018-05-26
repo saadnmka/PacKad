@@ -1,0 +1,86 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-item class  ="side-menu-item" no-lines>
+            <h1 class = "txtheader">الملف الشخصي</h1>
+          </ion-item>
+         
+      </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    <ion-list>
+        <ion-list-header>
+          <ion-avatar item-start>
+            <img src="assets/imgs/profile.png">
+          </ion-avatar>
+          <p class="username">سعدنواف العنزي</p>
+          <a>تغير الصورة</a>
+        </ion-list-header>
+      </ion-list>
+      <div>
+          <ion-row> 
+              <ion-col>    
+                 <h3><ion-icon name='settings'></ion-icon><strong>معلومات عامة :  </strong> </h3>
+                </ion-col>
+            </ion-row>
+          <ion-row>
+            <ion-col> 
+            
+                  <ion-item>
+                     
+                  <ion-label>  <ion-icon name="person" color="danger"></ion-icon> الاسم</ion-label>
+                  <ion-input type = "text" [(ngModel)] = "user.Name"></ion-input>
+                    </ion-item>
+  
+                        <ion-item>
+                            <ion-label  ><ion-icon name="home" color="danger"></ion-icon> المدينة :  </ion-label>
+                            <ion-input type="text"  [(ngModel)] = "user.City"></ion-input>
+                          </ion-item>
+                      <ion-item>
+                          <ion-label ><ion-icon name="call" color="danger"></ion-icon> رقم الجوال : </ion-label>
+                          <ion-input type="text" [(ngModel)] = "user.PhoneNumber"></ion-input>
+                        </ion-item>
+                     
+                <ion-item>
+                  <ion-label ><ion-icon name="lock" color="danger"></ion-icon>  تغيير الايميل</ion-label>
+                  <ion-input type="text" [(ngModel)] = "user.Email"></ion-input>
+                </ion-item>    
+            </ion-col>
+            <button class = "btn" (click) = "Update(user)">  حفظ </button>
+          </ion-row>
+
+          <ion-row>
+              <ion-col>
+                        <strong> <ion-icon name='settings'></ion-icon> تغير كلمة السر : </strong>   
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+        
+                  <ion-item>
+                      <ion-icon name="car" item-start color="danger"></ion-icon>
+                      <ion-label> كلمة السر الجديدة  : </ion-label>
+                      <ion-input type = "password"  [(ngModel)]="user.password"></ion-input>
+                    </ion-item>
+                
+          
+              </ion-col>
+            </ion-row>
+            <button class = "btn" (click) = "UpdatePassowrd(user.password)">تغيير الكلمة السرية </button>
+        </div>
+  
+   
+
+</ion-content> 

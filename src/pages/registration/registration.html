@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+        <ion-item class  ="side-menu-item" no-lines>
+          <h1 class = "txtheader">تسجيل حساب جديد</h1>
+        </ion-item>
+   
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content> 
+
+   
+
+  <h1 class="displayText"> الرجاء ادخال رقم الجوال:</h1>
+  <ion-item class="phoneText">
+      <ion-label stacked color="primary"><ion-icon name="call"></ion-icon> رقم الجوال :</ion-label>
+      <ion-input type="number"  [(ngModel)]= "PhoneNumber" ></ion-input>
+    </ion-item>
+    <button ion-button class="btn" (click)="login(PhoneNumber)">ارسال</button>
+    <div id="recaptcha-container"></div> 
+</ion-content>
+

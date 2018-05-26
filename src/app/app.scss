@@ -1,0 +1,115 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+.txtheader{
+    color: #b9b8b8;
+    font-size: 9px;
+    }
+
+
+    .menu-header {
+      padding: 5px 15px;
+      background-image: url('../assets/imgs/beautiful-color-ui-gradients-backgrounds-royal.png');
+      background-size: cover;
+      color: white;
+      .name {
+        font-weight: 500;
+        margin-bottom: 3px; 
+        font-size: 18px;
+      }
+      .e-mail {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 18px;
+        
+      }
+    }
+    .user-avatar {
+      padding: .5em;
+      height: 12vh;
+    }
+
+    $SIDEMENU_TOP: rgb(236, 241, 250);
+    $SIDEMENU_BOTTOM: rgb(240, 243, 248);
+    $SIDEMENU_TRANSPARENCY: rgba(230, 239, 248, 0.993);
+
+    .side-menu-gradient{
+      
+      background: -webkit-linear-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+      background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+      background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+      background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    
+    
+    }
+
+    .side-menu-item{
+        background:none;
+        color:rgb(196, 194, 194);
+        
+        
+        border:0px;
+        .item-content{
+            background:none;
+            &.activated{
+                background: $SIDEMENU_TRANSPARENCY;
+            }
+        }
+        &.active-page-highlight{
+            .item-content{
+                background: $SIDEMENU_TRANSPARENCY;
+            }
+        }
+    }
+
+   
+
+        .displayText{
+            padding-top: 10px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            color:#094488; 
+            font-size :20px;
+            }
+
+        
+            .btn
+            {
+            width: 80%;
+            height: 40px;
+            font-size: 0.9em;
+            background-color: #39acdc;
+            color: white;
+            margin-right: 30px;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            }
+    
+
+    @font-face {
+      font-family:Arabic;
+      src: url("../assets/fonts/2-cm9JNi2YuVOUckY5y-au8.woff2") format("woff2");
+      }
+      
+      body, span, button, h1, h2, h3, h4, h5, h6, p, ion-item, ion-title, ion-label {
+          font-family:Arabic;
+          font-size: 12px;
+       }
+
+   

@@ -1,0 +1,63 @@
+<!--
+  Generated template for the HistoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-item class  ="side-menu-item" no-lines>
+          <h1 class = "txtheader">رحلاتي</h1>
+        </ion-item>
+    
+  </ion-navbar> 
+
+</ion-header>
+
+
+<ion-content  class = "list-avatar-page">
+
+   
+    <div class ="borFirst">  
+      <h1 class ="te">الرحلات الغير مكتملة : </h1>  
+    </div>
+    
+    <ion-list   *ngFor = "let tirp of OnTrip">
+     
+        <ion-item  *ngIf = "tirp.tripState == 'open'">
+            <ion-avatar item-start>
+              <img src="assets/imgs/profile.png">
+            </ion-avatar>
+            <h2>{{tirp.DriverName}}</h2>
+            <p>من : {{tirp.Departure_City}}    الى: {{tirp.Arrival_city}} </p>
+            <a item-end (click) = "HistoryDetail(tirp)"> تفاصيل</a>
+          </ion-item> 
+     </ion-list>  
+
+
+
+    <div class = "SecondList">
+        <div class ="borFirst">  
+            <h1 class ="te">الرحلات المكتملة : </h1>  
+          </div>
+      <ion-list   *ngFor = "let tirp of OnTrip">
+         <ion-item  *ngIf = "tirp.tripState == 'close'">
+             <ion-avatar item-start>
+               <img src="assets/imgs/profile.png">
+             </ion-avatar>
+             <h2>{{tirp.DriverName}}</h2>
+             <p>من : {{tirp.Departure_City}}    الى: {{tirp.Arrival_city}} </p>
+             <a item-end (click) = "HistoryDetailWithoutCancel(tirp)" >تفاصيل</a>
+           </ion-item>
+      </ion-list>  
+
+    </div>
+
+
+
+</ion-content>

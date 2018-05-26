@@ -1,0 +1,42 @@
+<!--
+  Generated template for the TripPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-item class  ="side-menu-item" no-lines>
+        <h1 class = "txtheader">الرحلات المتاحة</h1>
+      </ion-item>
+  
+</ion-navbar> 
+
+</ion-header>
+
+
+<ion-content >
+  
+     <ion-list>
+        <ion-item *ngFor = "let tirp of TripList$ |async">
+            <ion-thumbnail item-start>
+                <img src="assets/imgs/profile.png">
+              </ion-thumbnail>
+              <h2 >{{tirp.DriverName}}</h2>
+              <p class = "listInfo"><strong>من</strong> : {{tirp.Departure_City}}  <strong>  الى: </strong>  {{tirp.Arrival_city}} </p>
+              <p class = "listInfo"> <strong>  الوقت: </strong>{{tirp.Time}} </p>
+              <p class = "listInfo"> <strong>  المقاعد المتاحة: </strong>{{tirp.PassengersNumber}} </p>
+              <button *ngIf="(tirp.PassengersNumber > 0 && tirp.tripState == 'open')" ion-button clear item-end (click) = "TripDetails(tirp)" > تفاصيل</button>
+              <button *ngIf=" " ion-button clear item-end color = "danger"  >الرحلة مغلقة</button>
+              <button *ngIf="(tirp.PassengersNumber == 0 ||tirp.tripState == 'close' )" ion-button clear item-end color = "danger"  >الرحلة مغلقة</button>
+              
+              
+        </ion-item>
+      </ion-list>
+      
+</ion-content>

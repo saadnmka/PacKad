@@ -1,0 +1,46 @@
+<ion-menu [content]="content" id="User">
+  <ion-header>
+  
+  </ion-header>
+
+  <ion-content>
+      <div class="menu-header">
+          <!--material-design-background-->
+          <img class="user-avatar round"  src="assets/imgs/profile.png">
+          <p class="name">{{(profileData | async)?.Name}}</p>
+          <p class="e-mail">{{(profileData | async)?.Email}}</p>
+        </div>
+    <ion-list  >
+      <button class="side-menu-item" menuClose="right"  ion-item *ngFor="let p of pages" (click)="openPage(p)">
+         <p> <ion-icon name="{{p.icon}}" color = "mycolor"></ion-icon> {{p.title}}  </p> 
+         
+      </button>
+    </ion-list>
+  </ion-content>  
+
+</ion-menu>
+
+<ion-menu [content]="content" id="driver"> 
+    <ion-header>
+    
+    </ion-header>
+  
+    <ion-content >
+        <div class="menu-header">
+            <!--material-design-background-->
+            <img class="user-avatar round"  src="assets/imgs/profile.png">
+            <p class="name">{{(profileData | async)?.Name}}</p>
+          <p class="e-mail">{{(profileData | async)?.Email}}</p> 
+          </div>
+      <ion-list >
+        <button class="side-menu-item" menuClose="right"  ion-item *ngFor="let p of pagesDriver" (click)="openPage(p)">
+            <ion-icon name="{{p.icon}}" color = "mycolor"></ion-icon>
+            {{p.title}} 
+        </button>
+      </ion-list>
+    </ion-content> 
+  
+  </ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>

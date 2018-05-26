@@ -1,0 +1,32 @@
+page-welcome {
+
+    
+    ion-content {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-color: transparent;
+      }
+    .mapborder{ 
+         margin-top: 60px;
+        height: 150px;
+        background-image: url('../../assets/imgs/mainFormMap.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-color: transparent;
+    }
+
+    .col{
+        //border: 0.2px solid ;
+        text-align: center;
+   
+   }
+
+   ion-icon {
+    font-size: 50px; //Preferred size here
+    color:rgb(44, 93, 139);
+}
+
+
+} 

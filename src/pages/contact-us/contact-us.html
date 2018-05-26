@@ -1,0 +1,63 @@
+<!--
+  Generated template for the ContactUsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-item class  ="side-menu-item" no-lines>
+      <h1 class = "txtheader">اتصل بنا</h1>
+    </ion-item>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content> 
+  
+
+ <h1 class = "info_header">  تطبيق دروب يرحب بكم ، ويمكنكم التواصل معنا عن طريق المعلومات التالية </h1>
+
+ <div class="info">
+    <p class = "te"> <ion-icon name="logo-whatsapp" color = "secondary"></ion-icon> :{{ContactPhoneNumber}} </p>
+ 
+    <p class = "te"> <ion-icon name="call" color = "danger"></ion-icon>  :{{ContactPhoneNumber}}</p>
+
+    <p class = "te"> <ion-icon name="mail" color = "primary"></ion-icon>  :{{ContactEmail}} </p>
+
+ </div>
+  <hr>
+   
+      <h1 class = "info_claim">  بامكانكم ارسال شكوى  </h1>
+      <ion-grid>
+          <ion-row>
+              <ion-col col-12>
+                <p><strong>  مقدم الشكوى : </strong>{{claim.UserName}}</p> 
+              </ion-col>
+            </ion-row>
+
+        <ion-row>
+          <ion-col col-12>
+              <ion-item no-lines>
+                  <ion-label color="primary" stacked>  تفاصيل الشكوى</ion-label>
+                  <ion-textarea [(ngModel)] = "claim.description"></ion-textarea>
+                </ion-item>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+      <button class ="btn" (click) = "SendCaim(claim)"> ارسال الشكوى </button> 
+
+
+      <ion-item no-lines>
+          <ion-label color="primary">   مدينه</ion-label>
+          <ion-input type="text" [(ngModel)] = "city"></ion-input>
+        </ion-item>
+      <button class ="btn" (click) = "addcity(city)"> ارسال الشكوى </button> 
+
+</ion-content>

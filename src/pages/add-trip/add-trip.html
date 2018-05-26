@@ -1,0 +1,99 @@
+<!--
+  Generated template for the AddTripPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-item class  ="side-menu-item" no-lines>
+        <h1 class = "txtheader">اضافة رحلة </h1>
+      </ion-item>
+    </ion-navbar>  
+
+
+</ion-header>
+
+
+<ion-content >
+
+    <h1 class = "displayText"> الرجاء ادخال المعلومات التالية</h1>
+
+
+    <ion-grid>
+        <ion-row>
+          <ion-col col-14>
+              <ion-item no-lines>
+                  <ion-label> <strong> مدينة السفر </strong></ion-label>
+                  <ion-select [(ngModel)]="trip.Departure_City"  interface="action-sheet">
+                    <ion-option  *ngFor= "let c of citiesName$ | async" value="{{c.city}}">{{c.city}}</ion-option>   
+                  </ion-select>
+                </ion-item>
+          </ion-col>
+         </ion-row>
+         <ion-row>
+            <ion-col col-14>
+                <ion-item no-lines> 
+                    <ion-label> <strong> مدينة الوصول  </strong></ion-label>
+                    <ion-select [(ngModel)]="trip.Arrival_city" interface="action-sheet">
+                    <ion-option  *ngFor= "let c of citiesName$ | async" value="{{c.city}}">{{c.city}}</ion-option>      
+                    </ion-select>
+                  </ion-item>
+            </ion-col>
+
+         </ion-row> 
+         <ion-row>
+            <ion-col col-6>
+                <ion-item no-lines>
+                <ion-label > <strong> يوم الرحلة </strong> <ion-icon name="calendar"></ion-icon></ion-label>
+                <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="trip.Date"></ion-datetime>
+            </ion-item>
+              </ion-col>
+              <ion-col col-6 >
+                  <ion-item no-lines>
+                      <ion-label > <strong> وقت الرحلة </strong><ion-icon name="calendar"></ion-icon></ion-label>
+                      <ion-datetime  pickerFormat="h:mm A"  displayFormat= "h:mm A"   [(ngModel)]="trip.Time"></ion-datetime>
+                  </ion-item>
+              </ion-col>
+
+         </ion-row>
+
+         <ion-row>
+            <ion-col col-14>
+                <ion-item no-lines>
+                    <ion-label > <strong>  عدد الاشخاص: </strong></ion-label>
+                    <ion-select  [(ngModel)]="trip.PassengersNumber" interface="action-sheet">
+                      <ion-option value="1">1</ion-option>
+                      <ion-option value="2">2</ion-option>
+                      <ion-option value="3">3</ion-option>
+                      <ion-option value="4">4</ion-option>
+                      <ion-option value="5">5</ion-option>  
+                    </ion-select>
+                    </ion-item>
+              </ion-col>
+         </ion-row>
+          
+         <ion-row>
+         <ion-col col-14>
+            <ion-item no-lines>
+                <ion-label> <strong> السعر للشخص :</strong> </ion-label> 
+                <ion-input [(ngModel)] = "trip.TripPrice"></ion-input>
+              </ion-item>
+
+        </ion-col>
+
+
+         </ion-row>
+
+        
+      </ion-grid>
+
+         <button class ="btn" (click) = "AddTrip(trip)">اضافة الرحلة</button>
+
+
+
+</ion-content> 

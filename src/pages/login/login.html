@@ -1,0 +1,46 @@
+<ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+  <div padding>
+    <ion-row>
+      <ion-col>
+        <img class="logo" src="assets/imgs/cleveland-auto-show-car-logo-png-25.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list  class="no-border">
+            <ion-item>
+                <ion-label><ion-icon name="person"></ion-icon> اسم المستخدم</ion-label>
+                <ion-input type="text"  [(ngModel)]= "user.PhoneNumber"></ion-input>
+              </ion-item>
+          <ion-item>
+            <ion-label><ion-icon name="lock"></ion-icon> كلمة المرور</ion-label>
+            <ion-input type="password"  [(ngModel)]= "user.Password"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button class="login-button" (click)="login(user)">دخول</button>
+      </ion-col>
+      
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div (click)="goToSignup()">
+          <span>تسجيل حساب جديد.</span>
+        </div>
+      </ion-col>
+      <ion-col>
+        
+          <div (click)="ResetPassowrdPage()">
+              <span>  نسيت كلمة المرور؟</span>
+           
+            </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+
+</ion-content>
